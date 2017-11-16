@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="qmsv2.AdminMenuController">
+   <children>
+          <Button fx:id="btn1" layoutX="25.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleActionB1" prefHeight="29.0" prefWidth="73.0" text="خروج" AnchorPane.leftAnchor="25.0">
+         <font>
+            <Font name="Arabic Typesetting" size="14.0" />
+         </font>
+          </Button>
+      <Button fx:id="btn2" layoutX="231.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleActionb2" prefHeight="45.0" prefWidth="238.0" text="إنشاء حساب " AnchorPane.rightAnchor="231.0">
+         <font>
+            <Font name="Arabic Typesetting" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn3" layoutX="231.0" layoutY="212.0" mnemonicParsing="false" onAction="#handleActionb3" prefHeight="45.0" prefWidth="238.0" text="حذف حساب" AnchorPane.rightAnchor="231.0">
+         <font>
+            <Font name="Arabic Typesetting" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn4" layoutX="231.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleActionb4" prefHeight="45.0" prefWidth="238.0" text="التقرير" AnchorPane.rightAnchor="231.0">
+         <font>
+            <Font name="Arabic Typesetting" size="22.0" />
+         </font>
+      </Button>
+  
+      <Label alignment="CENTER_RIGHT" layoutX="422.0" layoutY="82.0" prefHeight="31.0" prefWidth="94.0" text="القائمة الرئيسية" AnchorPane.rightAnchor="184.0">
+         <font>
+            <Font name="Arabic Typesetting" size="22.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="526.0" layoutY="36.0" prefHeight="31.0" prefWidth="94.0" text="نظام إدارة الجودة">
+         <font>
+            <Font name="Arabic Typesetting" size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

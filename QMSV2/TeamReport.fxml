@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="qmsv2.TeamReportController">
+   <children>
+      <Button fx:id="btn2" layoutX="163.0" layoutY="144.0" mnemonicParsing="false" onAction="#handleActionB2" prefHeight="25.0" prefWidth="257.0" text="متابعة تقرير">
+         <font>
+            <Font name="Arabic Typesetting" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn3" layoutX="163.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleActionB3" prefHeight="25.0" prefWidth="257.0" text="تقرير جديد ">
+         <font>
+            <Font name="Arabic Typesetting" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn1" layoutX="22.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleActionB1" prefHeight="31.0" prefWidth="53.0" text="رجوع">
+         <font>
+            <Font name="Arabic Typesetting" size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="l" layoutX="143" layoutY="14" text="نظام إدارة الجودة">
+         <font>
+            <Font name="Arabic Typesetting" size="31.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

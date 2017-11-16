@@ -1,0 +1,24 @@
+
+    .root{
+        -fx-background-image: url("wh2.jpg");
+        -fx-background-repeat: stretch;   
+        -fx-background-size: 900 506;
+        -fx-background-position: center center;
+        -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+        
+    }
+  
+   .button {
+    -fx-background-color: 
+        linear-gradient(#68d8cb, #5dafa2),
+        linear-gradient(#377a6f, #205e54),
+        linear-gradient(#155449, #0a4239),
+        linear-gradient(#68d8cb 0%, #377a6f 50%, #155449 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: white ;
+    -fx-padding: 10 20 10 20;
+}
+   
+

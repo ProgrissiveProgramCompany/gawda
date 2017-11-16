@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="700.0" style="-fx-background-image: #e5eae9;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="qmsv2.LoginController">
+   <children>
+      <AnchorPane layoutX="380.0" layoutY="27.0" opacity="0.89" prefHeight="347.0" prefWidth="259.0" style="-fx-background-color: #1e6658;" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="61.0">
+         <children>
+             <TextField fx:id="userText" alignment="CENTER_RIGHT" layoutX="21.0" layoutY="81.0" opacity="0.63" prefHeight="25.0" prefWidth="204.0" promptText="اسم المستخدم">
+               <font>
+                  <Font name="Arabic Typesetting" size="23.0" />
+               </font></TextField> 
+            <PasswordField fx:id="passText" alignment="CENTER_RIGHT" layoutX="21.0" layoutY="136.0" opacity="0.63" prefHeight="25.0" prefWidth="204.0" promptText="كلمة المرور">
+               <font>
+                  <Font name="Arabic Typesetting" size="22.0" />
+               </font></PasswordField>
+                       <Button layoutX="21.0" layoutY="255.0" mnemonicParsing="false" onAction="#handleActionEvent" opacity="0.54" prefHeight="25.0" prefWidth="204.0" style="-fx-background-color: #083d32;" text="دخول" textFill="#f5f5f5">
+               <font>
+                  <Font name="Arabic Typesetting" size="19.0" />
+               </font></Button>
+            <Label alignment="CENTER_RIGHT" layoutX="77.0" layoutY="30.0" prefHeight="31.0" prefWidth="92.0" text="تسجيل الدخول" textFill="#f2f2f2">
+               <font>
+                  <Font name="Arabic Typesetting" size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER_RIGHT" layoutX="79.0" layoutY="115.0" opacity="0.73" prefHeight="47.0" prefWidth="194.0" text="مرحبا في نظام ادرة الجودة" AnchorPane.leftAnchor="79.0">
+         <font>
+            <Font name="Arabic Typesetting" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="179.0" opacity="0.76" prefHeight="43.0" prefWidth="234.0" text="النظام الأول من نوعه في السودان" AnchorPane.bottomAnchor="178.0" AnchorPane.leftAnchor="79.0">
+         <font>
+            <Font name="Arabic Typesetting" size="31.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
