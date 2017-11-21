@@ -1,14 +1,12 @@
 package qmsv2;
 
-import com.sun.xml.internal.ws.api.streaming.XMLStreamWriterFactory;
-
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+
+import static java.util.Objects.isNull;
 
 public class Database {
 
@@ -202,7 +200,83 @@ public class Database {
 
 
 
+    public void     addImprovementSuggestion(ArrayList improvements){
 
+      try{
+            conn = DriverManager.getConnection(this.path);
+            Statement statement = conn.createStatement();
+
+            statement.execute("INSERT INTO  ImprovementPoints VALUES ("+null+","+(int)improvements.get(0)+"," +(int)improvements.get(1)+","+0+",'"+(String) improvements.get(2)+"')");
+
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        System.out.println(improvements.get(0));
+        System.out.println(improvements.get(1));
+        System.out.println((String)improvements.get(2));
+
+
+    }
+
+    public void deleteImprovementSuggestion(ArrayList improvements ){
+        try{
+
+            conn = DriverManager.getConnection(this.path);
+            Statement statement = conn.createStatement();
+
+            System.out.println((int)(improvements.get(0)));
+            System.out.println((int)(improvements.get(01)));
+
+
+            ArrayList im = (ArrayList) improvements.get(2);
+            for (int i=0;i<im.size();i++) {
+                System.out.println("STDID id   "+(int) improvements.get(0) +"   axis id is  "+ (int) improvements.get(1) +"   text is  :  "+(String) im.get(i));
+              int r=  statement.executeUpdate("delete from ImprovementPoints where   ImpText='"+(String)im.get(i)+"';") ;
+                //StandardID =" + (int) improvements.get(0) + " AND AxesID =" + (int) improvements.get(1) + " AND
+            System.out.println("the result is "+r);
+            }
+            }catch(Exception e){e.printStackTrace();}
+
+        System.out.println();
+
+    }
+
+    public ArrayList getImprovementSuggetions(){
+        ArrayList arrayList = new ArrayList();
+        boolean first = true;
+        try{
+
+            conn = DriverManager.getConnection(this.path);
+            Statement statement = conn.createStatement();
+
+            ResultSet result = statement.executeQuery("select * from ImprovementPoints");
+
+            ArrayList arrayList1 = new ArrayList();
+            while(result.next()){
+                if (first){
+                    arrayList.add(result.getString("StandardID"));
+                    arrayList.add(result.getString("AxesID"));
+                    first = false;
+                }
+
+
+
+                arrayList1.add(result.getString("ImpText"));
+
+
+            }
+            if(arrayList.size()<2) {
+                arrayList.add(-1);
+                arrayList.add(-1);
+                arrayList.add(2, arrayList1);
+
+            }
+        }catch(Exception e){e.printStackTrace();}
+return arrayList;
+
+    }
 
 
 

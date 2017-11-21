@@ -1,21 +1,26 @@
 package qmsv2;
 
-import java.io.*;
+import java.io.File;
+import java.io.RandomAccessFile;
 import java.util.ArrayList;
 
 public class Log {
 
     public Log(){
-
-
+        try {
+            r = new RandomAccessFile(file, "rw");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
-
+    RandomAccessFile r;
+    File file = new File("D:\\Prgramming\\ServerSide\\src\\qmsv2\\LogFile.txt");
     public void  WriteLog(ArrayList array){
         try{
 
-            File file = new File("D:\\Prgramming\\ServerSide\\src\\qmsv2\\LogFile.txt");
-            RandomAccessFile r = new RandomAccessFile(file,"rw");
+
+
 
             for(int i=0;i<array.size();i++){
 

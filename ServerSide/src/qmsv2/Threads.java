@@ -15,7 +15,7 @@ public class Threads extends Thread {
     private Message message;
 
     public Threads(Socket socket) {
-System.out.println("igkghjghmgvhjyvyfyjfyjfvjug");
+        System.out.println("igkghjghmgvhjyvyfyjfyjfvjug");
         this.socket = socket;
         init();
         System.out.println("in thread constructor");
@@ -52,6 +52,7 @@ System.out.println("igkghjghmgvhjyvyfyjfyjfvjug");
             while (true) {
 
                 Message message2 = (Message) this.ois.readObject();
+                System.out.println("service number is "+message2.service);
                 switch (message2.service) {
 
                     case 1:
@@ -97,7 +98,28 @@ System.out.println("igkghjghmgvhjyvyfyjfyjfvjug");
                         System.out.println("****************");
                         database.saveAnswers(message2.array);
                         break;
+
+                    case 4:
+                        System.out.println("Service improvement suggetions 2");
+                        ArrayList improvements = message2.array;
+                        database.addImprovementSuggestion(improvements);
+                        break;
+                    case 0:
+                        System.out.println("Service improvement suggetions");
+                        Message m = new Message();
+                        m.array = database.getImprovementSuggetions();
+                        this.ous.writeObject(m);
+
+                        break;
+                    case 5:
+                        System.out.println("Service delete improvement suggetions");
+                        System.out.println((int)message2.array.get(0));
+                        database.deleteImprovementSuggestion(message2.array);
+                        break;
+
+                        default:System.out.println("unknown service!!!!!!");
                 }
+
 
 
             }
@@ -134,6 +156,8 @@ System.out.println("igkghjghmgvhjyvyfyjfyjfvjug");
         System.out.println("the sent is done !! ");
 
     }
+
+
 
 }
 
